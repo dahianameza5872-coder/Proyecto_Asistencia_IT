@@ -1,0 +1,101 @@
+ID_Empleado,Nombre,Area,Dias_Laborables_Mes,Dias_Asistidos,Dias_Remotos,Dias_Permiso,Vacaciones_Disponibles,Fecha_Expiracion_Vacaciones,Estatus
+1,Daniela Hernandez,DevOps,22,16,1,2,16,2026-11-16,Permiso
+2,Ricardo Lopez,Security,22,9,3,1,7,2027-01-08,Vacaciones
+3,Andrea Reyes,DevOps,22,15,1,4,5,2027-03-05,Activo
+4,Monica Navarro,Networking,22,18,1,2,0,2027-03-23,Permiso
+5,Fernando Diaz,DevOps,22,18,0,0,1,2027-02-24,Vacaciones
+6,Mariana Ibarra,Security,22,15,6,6,17,2026-12-28,Permiso
+7,Juan Ruiz,IT Support,22,12,4,6,1,2027-02-15,Activo
+8,Daniel Martinez,DevOps,22,19,5,0,4,2026-10-12,Vacaciones
+9,Hugo Flores,Security,22,19,1,3,12,2027-03-07,Vacaciones
+10,Claudia Torres,DevOps,22,19,1,6,6,2026-08-21,Activo
+11,Alberto Castillo,Networking,22,14,5,2,4,2027-01-15,Vacaciones
+12,Ana Perez,Security,22,11,6,3,18,2026-07-02,Activo
+13,Monica Torres,DevOps,22,15,1,4,16,2026-06-09,Permiso
+14,Oscar Lopez,IT Support,22,9,6,1,8,2026-08-18,Activo
+15,Hugo Morales,Security,22,20,4,4,0,2027-03-05,Permiso
+16,Patricia Diaz,DevOps,22,16,3,0,1,2026-05-19,Permiso
+17,Roberto Garcia,IT Support,22,15,0,7,12,2026-09-29,Permiso
+18,Hugo Vega,IT Support,22,19,0,0,8,2026-05-12,Activo
+19,Luis Perez,IT Support,22,22,6,5,17,2026-12-28,Vacaciones
+20,Patricia Cruz,IT Support,22,18,3,3,9,2026-07-29,Permiso
+21,Laura Ruiz,Networking,22,16,3,5,2,2026-12-28,Vacaciones
+22,Claudia Jimenez,IT Support,22,21,2,7,3,2027-03-15,Activo
+23,Juan Diaz,Security,22,11,0,6,16,2027-02-16,Vacaciones
+24,Sofia Pineda,IT Support,22,20,4,0,10,2026-06-05,Activo
+25,Fernando Ruiz,IT Support,22,10,6,4,5,2026-12-09,Vacaciones
+26,Luis Morales,Networking,22,19,2,5,9,2026-12-01,Permiso
+27,Diego Morales,IT Support,22,19,1,1,3,2026-06-20,Activo
+28,Sofia Romero,Security,22,20,6,4,7,2026-07-30,Activo
+29,Patricia Salas,IT Support,22,19,3,7,17,2026-08-21,Vacaciones
+30,Claudia Navarro,Networking,22,20,4,5,11,2026-06-27,Permiso
+31,Ricardo Torres,Security,22,10,4,1,18,2026-12-15,Activo
+32,Fernando Navarro,Networking,22,11,3,6,4,2026-12-04,Permiso
+33,Laura Hernandez,Security,22,19,3,2,11,2026-11-25,Permiso
+34,Daniel Garcia,Security,22,19,1,4,12,2026-06-27,Vacaciones
+35,Hugo Vega,DevOps,22,9,4,3,5,2026-11-22,Permiso
+36,Juan Vega,IT Support,22,20,4,2,16,2026-07-18,Permiso
+37,Roberto Morales,IT Support,22,18,5,2,2,2027-03-25,Activo
+38,Alberto Martinez,IT Support,22,12,2,7,14,2027-03-11,Activo
+39,Roberto Romero,IT Support,22,14,0,3,4,2026-10-26,Permiso
+40,Paula Torres,Networking,22,10,6,3,3,2027-02-19,Permiso
+41,Carlos Salas,IT Support,22,8,2,0,8,2027-03-15,Permiso
+42,Diego Romero,IT Support,22,9,0,6,15,2026-07-29,Activo
+43,Andrea Perez,Security,22,21,6,0,3,2026-05-09,Permiso
+44,Fernando Perez,DevOps,22,19,1,1,11,2026-07-30,Vacaciones
+45,Victor Ruiz,Security,22,21,4,6,13,2026-07-07,Vacaciones
+46,Laura Jimenez,Networking,22,18,2,2,9,2026-07-02,Permiso
+47,Diego Perez,IT Support,22,21,4,5,9,2027-02-03,Activo
+48,Victor Navarro,DevOps,22,22,1,6,4,2026-11-28,Permiso
+49,Diego Jimenez,Security,22,17,1,5,1,2026-07-25,Activo
+50,Victor Ortiz,Networking,22,11,6,7,2,2026-09-14,Activo
+51,Paula Navarro,Networking,22,20,0,5,0,2026-06-09,Activo
+52,Paula Vega,DevOps,22,9,6,2,1,2026-08-09,Vacaciones
+53,Mariana Salas,DevOps,22,8,5,3,0,2026-05-19,Activo
+54,Alberto Hernandez,DevOps,22,22,0,0,3,2026-08-03,Activo
+55,Andrea Cruz,IT Support,22,9,3,3,3,2026-06-25,Vacaciones
+56,Daniel Garcia,Security,22,10,0,6,2,2027-03-26,Permiso
+57,Hugo Ortiz,DevOps,22,14,4,7,10,2026-08-22,Activo
+58,Sofia Diaz,DevOps,22,20,3,5,18,2027-01-24,Permiso
+59,Daniel Mendoza,Networking,22,13,1,2,18,2027-02-27,Permiso
+60,Andrea Salas,DevOps,22,20,5,1,5,2027-01-25,Permiso
+61,Diego Vega,IT Support,22,16,0,6,16,2026-12-07,Vacaciones
+62,Daniel Mendoza,IT Support,22,15,6,0,1,2027-01-30,Activo
+63,Ana Ramos,Networking,22,10,0,3,17,2027-01-17,Permiso
+64,Raul Romero,DevOps,22,16,6,3,16,2026-10-07,Permiso
+65,Claudia Garcia,Networking,22,21,5,4,18,2026-09-27,Activo
+66,Raul Navarro,Security,22,22,4,6,11,2026-11-17,Permiso
+67,Andrea Ruiz,IT Support,22,14,0,7,6,2026-12-04,Activo
+68,Daniela Jimenez,Networking,22,19,3,6,6,2026-05-10,Permiso
+69,Ricardo Castillo,IT Support,22,16,0,5,5,2026-09-18,Vacaciones
+70,Luis Cruz,Security,22,20,6,3,4,2026-06-17,Activo
+71,Claudia Salas,DevOps,22,21,2,7,16,2027-01-02,Activo
+72,Daniela Flores,DevOps,22,22,1,4,5,2026-06-22,Activo
+73,Laura Torres,Networking,22,18,6,7,11,2027-01-18,Activo
+74,Ana Morales,Security,22,17,0,3,3,2026-11-20,Permiso
+75,Ana Salas,IT Support,22,8,3,5,15,2026-05-19,Vacaciones
+76,Daniela Lopez,Networking,22,19,2,2,0,2026-06-02,Activo
+77,Mariana Perez,DevOps,22,17,3,6,8,2027-02-07,Permiso
+78,Raul Jimenez,IT Support,22,10,4,5,17,2026-07-30,Activo
+79,Gabriela Romero,IT Support,22,8,2,7,10,2026-09-10,Activo
+80,Roberto Lopez,DevOps,22,13,3,7,7,2026-07-30,Activo
+81,Laura Mendoza,Networking,22,10,2,6,2,2027-03-23,Vacaciones
+82,Laura Ramos,Security,22,14,6,7,11,2027-03-13,Permiso
+83,Diego Ruiz,DevOps,22,13,0,2,11,2026-05-29,Permiso
+84,Paula Sanchez,DevOps,22,12,6,4,2,2026-10-09,Vacaciones
+85,Andrea Reyes,DevOps,22,21,6,7,17,2026-09-27,Activo
+86,Paula Ortiz,DevOps,22,22,4,2,9,2026-05-23,Permiso
+87,Gabriela Navarro,Security,22,22,4,5,14,2026-10-17,Activo
+88,Gabriela Martinez,DevOps,22,18,2,6,6,2027-02-17,Vacaciones
+89,Gabriela Jimenez,Networking,22,13,6,3,12,2026-08-06,Permiso
+90,Paula Martinez,DevOps,22,22,6,7,18,2026-08-11,Permiso
+91,Andrea Mendoza,Networking,22,21,0,3,11,2026-10-10,Activo
+92,Laura Pineda,DevOps,22,8,5,3,17,2026-11-12,Vacaciones
+93,Juan Vega,Networking,22,22,5,3,1,2027-01-08,Activo
+94,Karla Diaz,Networking,22,9,6,1,16,2027-03-14,Activo
+95,Mariana Cruz,Networking,22,18,3,5,11,2026-07-18,Permiso
+96,Raul Ruiz,IT Support,22,14,4,1,18,2026-08-23,Permiso
+97,Oscar Mendoza,DevOps,22,20,1,2,7,2026-12-15,Vacaciones
+98,Victor Mendoza,DevOps,22,22,6,7,5,2027-03-04,Activo
+99,Claudia Flores,IT Support,22,10,5,6,5,2027-03-07,Activo
+100,Ricardo Sanchez,DevOps,22,18,3,3,8,2027-02-25,Vacaciones

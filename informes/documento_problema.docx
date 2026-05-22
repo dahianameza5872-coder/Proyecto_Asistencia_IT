@@ -1,1 +1,71 @@
- 
+ DOCUMENTO DE DEFINICIÓN DEL PROBLEMA
+Proyecto: Control de Asistencia y Gestión de Disponibilidad
+Área: Oficina de IT
+
+1. DESCRIPCIÓN DEL PROBLEMA
+
+En la operación diaria de la Oficina de IT, la continuidad 
+del servicio depende directamente de la disponibilidad del 
+personal. Actualmente no existe un mecanismo centralizado 
+que permita a los supervisores visualizar en tiempo real el 
+estado de asistencia, permisos y vacaciones de sus equipos.
+
+Esta falta de visibilidad genera tres consecuencias directas:
+
+  a) Decisiones reactivas: los supervisores asignan tareas 
+     y cubren incidencias sin saber con anticipación quién 
+     estará disponible, lo que genera retrasos en la atención 
+     de tickets y riesgo de incumplimiento de SLAs.
+
+  b) Concentración de ausencias: sin un calendario de 
+     vacaciones planificado, múltiples colaboradores toman 
+     ausencias simultáneas en periodos críticos, dejando 
+     áreas desprotegidas.
+
+  c) Incumplimiento silencioso: no existe un indicador que 
+     alerte cuando un colaborador está por debajo del mínimo 
+     de asistencia requerido (60%), lo que permite que el 
+     problema escale sin intervención oportuna.
+
+2. IMPACTO EN EL NEGOCIO
+
+  - 31 de 100 colaboradores (31%) no alcanzan el mínimo 
+    requerido de asistencia mensual del 60%.
+  - IT Support es el área más afectada con 11 colaboradores 
+    en riesgo, representando el 39% de su personal.
+  - 40 colaboradores acumulan más de 10 días de vacaciones 
+    sin planificar, lo que representa un riesgo latente de 
+    ausencias masivas.
+  - 12 colaboradores se encuentran en nivel crítico con 
+    menos del 45% de asistencia.
+
+3. OBJETIVOS SMART DEL PROYECTO
+
+  Objetivo 1: Identificar al 100% de los colaboradores con 
+  asistencia inferior al 60% mensual.
+
+  Objetivo 2: Diseñar y publicar un dashboard interactivo 
+  que permita al supervisor filtrar por área, estatus y nivel 
+  de riesgo.
+
+  Objetivo 3: Proponer un plan de gestión de vacaciones para 
+  los 40 colaboradores con días acumulados, reduciendo el 
+  riesgo de ausencias simultáneas.
+
+4. ENFOQUE TÉCNICO
+
+  - Fuente de datos: dataset_asistencia_it_26A.csv (100 
+    registros, proporcionado por la maestra)
+  - Análisis y limpieza: Python con librería pandas
+  - Visualización: Power BI Desktop con medidas DAX
+  - Entregables: dashboard interactivo (.pbix y .html), 
+    dataset limpio (.csv), script de análisis (.py)
+
+5. CRITERIOS DE ÉXITO
+
+  - Dashboard funcional con filtros por área, estatus y 
+    nivel de riesgo.
+  - Identificación clara de colaboradores en riesgo con 
+    semáforo visual.
+  - Narrativa de datos que explique hallazgos al supervisor.
+  - Propuesta de mejora documentada y sustentada en datos.

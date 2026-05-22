@@ -1,0 +1,122 @@
+ DOCUMENTO DE PATRONES INICIALES
+Proyecto: Control de Asistencia y Gestión de Disponibilidad
+Área: Oficina de IT 
+
+1. PATRONES DE INCUMPLIMIENTO POR ÁREA
+
+Tras el análisis exploratorio del dataset se identificaron 
+los siguientes patrones por departamento:
+
+  IT Support — ÁREA CRÍTICA
+  Total: 28 colaboradores | En riesgo: 11 (39%)
+  Asistencia promedio: 66%
+  Patrón detectado: Es el área con mayor concentración de 
+  incumplimiento. Los colaboradores en riesgo presentan 
+  simultáneamente alto número de días de permiso (promedio 
+  4.5 días) y baja asistencia presencial. No se observa 
+  correlación con trabajo remoto, lo que sugiere que los 
+  permisos no planificados son el factor principal.
+
+  Networking — ÁREA EN ALERTA
+  Total: 22 colaboradores | En riesgo: 8 (36%)
+  Asistencia promedio: 72%
+  Patrón detectado: Segundo lugar en tasa de riesgo. Presenta un
+  promedio de días remotos (3.23 días), lo que podría 
+  indicar una tendencia hacia la modalidad remota que no está 
+  siendo contabilizada como asistencia presencial.
+
+  Security — ÁREA ESTABLE
+  Total: 19 colaboradores | En riesgo: 5 (26%)
+  Asistencia promedio: 76%
+  Patrón detectado: A pesar de tener el mayor promedio de 
+  días remotos (3.42 días), presenta una menor tasa de riesgo. 
+  Sugiere que este equipo gestiona mejor el equilibrio entre 
+  presencialidad y trabajo remoto.
+
+  DevOps — ÁREA LÍDER
+  Total: 31 colaboradores | En riesgo: 7 (23%)
+  Asistencia promedio: 77%
+  Patrón detectado: Mejor desempeño general del equipo. Sin 
+  embargo, los 7 casos en riesgo presentan asistencias 
+  extremadamente bajas (entre 36% y 59%), lo que indica 
+  casos aislados pero severos que requieren atención individual.
+
+2. PATRONES POR ESTATUS
+
+  Activo (39 colaboradores): 
+  Asistencia promedio 74% | 13 en riesgo (33%)
+  Hallazgo: Que un colaborador esté en estatus Activo no 
+  garantiza cumplimiento. 13 personas activas no alcanzan 
+  el 60%, lo que indica ausencias injustificadas o permisos 
+  informales no registrados.
+
+  Permiso (37 colaboradores): 
+  Asistencia promedio 74% | 9 en riesgo (24%)
+  Hallazgo: El alto número de colaboradores en permiso 
+  (37%) reduce la capacidad operativa del equipo de manera 
+  significativa en el periodo analizado.
+
+  Vacaciones (24 colaboradores): 
+  Asistencia promedio 68% | 9 en riesgo (37%)
+  Hallazgo: Casi 4 de cada 10 colaboradores en vacaciones 
+  ya venían con asistencia deficiente antes de tomarlas, 
+  lo que sugiere un patrón de acumulación de ausencias.
+
+3. PATRONES DE RIESGO CRÍTICO
+
+Los 12 colaboradores en nivel crítico (<45%) comparten 
+los siguientes rasgos comunes:
+
+  - Días asistidos entre 8 y 9 (de 22 posibles)
+  - La mayoría tiene estatus Activo o en Vacaciones, 
+    no en Permiso oficial
+  - Varios acumulan días de vacaciones sin usar (entre 
+    0 y 17 días disponibles), lo que indica que las 
+    ausencias no se deben a vacaciones planificadas
+  - Se concentran principalmente en IT Support (5 casos) 
+    y DevOps (4 casos)
+
+Colaboradores críticos identificados:
+  - Mariana Salas (DevOps) — 36.36% — Activo
+  - Carlos Salas (IT Support) — 36.36% — Permiso
+  - Ana Salas (IT Support) — 36.36% — Vacaciones
+  - Gabriela Romero (IT Support) — 36.36% — Activo
+  - Laura Pineda (DevOps) — 36.36% — Vacaciones
+  - Hugo Vega (DevOps) — 40.91% — Permiso
+  - Ricardo Lopez (Security) — 40.91% — Vacaciones
+  - Oscar Lopez (IT Support) — 40.91% — Activo
+  - Andrea Cruz (IT Support) — 40.91% — Vacaciones
+  - Diego Romero (IT Support) — 40.91% — Activo
+  - Paula Vega (DevOps) — 40.91% — Vacaciones
+  - Karla Diaz (Networking) — 40.91% — Activo
+
+4. PATRÓN DE VACACIONES ACUMULADAS
+
+40 colaboradores acumulan más de 10 días de vacaciones 
+disponibles sin planificar. Los 5 casos más críticos son:
+
+  - Paula Martinez (DevOps) — 18 días acumulados
+  - Sofia Diaz (DevOps) — 18 días acumulados
+  - Claudia Garcia (Networking) — 18 días acumulados
+  - Ana Perez (Security) — 18 días acumulados
+  - Ricardo Torres (Security) — 18 días acumulados
+
+Riesgo operativo: si estos colaboradores toman sus 
+vacaciones de forma simultánea o no planificada, el 
+equipo podría perder hasta el 40% de su capacidad 
+operativa en un mismo periodo.
+
+5. RELACIÓN ENTRE TRABAJO REMOTO Y ASISTENCIA
+
+El promedio global de días remotos es 3.1 por colaborador.
+Al cruzar esta variable con el nivel de riesgo se observa:
+
+  - Colaboradores en nivel Óptimo (≥80%): 
+    promedio 3.2 días remotos
+  - Colaboradores en nivel Crítico (<45%): 
+    promedio 3.4 días remotos
+
+Conclusión: No existe una correlación directa entre mayor 
+trabajo remoto y menor asistencia presencial. El factor 
+determinante en el incumplimiento son los permisos y 
+ausencias no justificadas, no la modalidad remota.

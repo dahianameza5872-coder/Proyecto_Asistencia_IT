@@ -1,1 +1,78 @@
- 
+ BITÁCORA DE TRANSFORMACIONES DE DATOS
+Proyecto: Control de Asistencia y Gestión de Disponibilidad
+Área: Oficina de IT 
+
+
+TRANSFORMACIÓN 1 — Carga del dataset crudo
+Acción: Se cargó el archivo dataset_asistencia_it_26A.csv
+Resultado: 100 registros, 10 columnas
+Herramienta: Python / pandas
+Decisión: Se conservaron todos los registros al no detectar 
+corrupción de datos.
+
+TRANSFORMACIÓN 2 — Auditoría de calidad
+Acción: Verificación de valores nulos, duplicados y rangos
+Resultado:
+  - Valores nulos: 0
+  - IDs duplicados: 0
+  - Días laborables: valor fijo 22 para todos los registros
+  - Rango de Dias_Asistidos: 8 a 22 (dentro del rango válido)
+Decisión: Dataset aprobado sin necesidad de imputación.
+
+TRANSFORMACIÓN 3 — Cálculo de KPI principal
+Acción: Se creó la columna Pct_Asistencia
+Fórmula: (Dias_Asistidos / Dias_Laborables_Mes) × 100
+Resultado: Valores entre 36.36% y 100%
+Decisión: Se redondeó a 2 decimales para consistencia visual.
+
+TRANSFORMACIÓN 4 — Clasificación de cumplimiento
+Acción: Se creó la columna booleana Cumple_Minimo
+Regla aplicada: Si Pct_Asistencia >= 60 → TRUE, si no → FALSE
+Justificación: Política interna establece 60% como mínimo 
+requerido de asistencia mensual.
+Resultado: 69 registros TRUE, 31 registros FALSE.
+
+TRANSFORMACIÓN 5 — Días efectivos
+Acción: Se creó la columna Dias_Efectivos
+Fórmula: Dias_Asistidos + Dias_Remotos
+Justificación: Para evaluar la disponibilidad real del 
+colaborador considerando modalidad híbrida.
+Resultado: Efectividad promedio de 86.77%
+
+TRANSFORMACIÓN 6 — Porcentaje efectivo
+Acción: Se creó la columna Pct_Efectivo
+Fórmula: (Dias_Efectivos / Dias_Laborables_Mes) × 100
+Resultado: Rango entre 40% y 100%
+Tenemos porcentajes mayores a 100%, esto indica un problema en la lógica o en los datos. La columa agregada 
+Dias_Efectivos cuenta con numeros >22 que son los dias Dias_Laborables_Mes, esto es ilogico. Por lo que las 
+columas Dias_Asistidos y Dias_Remotos suman un valor >22.
+
+
+TRANSFORMACIÓN 7 — Modalidad de trabajo remoto
+Acción: Se creó la columna Modalidad_Remote
+Regla:
+  - 4 o más días remotos → Alta
+  - 2 a 3 días remotos → Media
+  - 0 a 1 días remotos → Baja
+Justificación: Permite identificar si el trabajo remoto 
+se relaciona con el incumplimiento de asistencia.
+
+TRANSFORMACIÓN 8 — Matriz de riesgo
+Acción: Se creó la columna Nivel_Riesgo
+Regla:
+  - Pct_Asistencia >= 80%  → Óptimo
+  - Pct_Asistencia >= 60%  → Aceptable
+  - Pct_Asistencia >= 45%  → En Riesgo
+  - Pct_Asistencia < 45%   → Crítico
+Resultado:
+  - Óptimo:     49 colaboradores
+  - Aceptable:  20 colaboradores
+  - En Riesgo:  19 colaboradores
+  - Crítico:    12 colaboradores
+
+TRANSFORMACIÓN 9 — Exportación del dataset limpio
+Acción: Se exportó el archivo dataset_limpio_enriquecido.csv
+Columnas nuevas añadidas: Pct_Asistencia, Pct_Efectivo,
+Dias_Efectivos, Cumple_Minimo, Nivel_Riesgo, Modalidad_Remote
+Total final: 100 registros, 16 columnas
+Herramienta: Python / pandas (to_csv, encoding utf-8-sig)

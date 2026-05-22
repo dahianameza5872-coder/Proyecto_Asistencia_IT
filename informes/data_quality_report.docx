@@ -1,1 +1,107 @@
- 
+ DATA QUALITY REPORT
+Proyecto: Control de Asistencia y Gestión de Disponibilidad
+Área: Oficina de IT
+
+1. INFORMACIÓN GENERAL DEL DATASET
+
+  Nombre del archivo: dataset_asistencia_it_26A.csv
+  Total de registros: 100
+  Total de columnas: 10
+  Días laborables del mes: 22 (valor fijo para todos)
+
+2. INVENTARIO DE COLUMNAS
+
+  Columna                      Tipo         Descripción
+  ─────────────────────────────────────────────────────
+  ID_Empleado                  Entero       Identificador único
+  Nombre                       Texto        Nombre completo
+  Area                         Texto        Departamento IT
+  Dias_Laborables_Mes          Entero       Días hábiles del mes
+  Dias_Asistidos               Entero       Días presenciales
+  Dias_Remotos                 Entero       Días en home office
+  Dias_Permiso                 Entero       Días de permiso usado
+  Vacaciones_Disponibles       Entero       Días de vacaciones sin usar
+  Fecha_Expiracion_Vacaciones  Fecha        Vencimiento de vacaciones
+  Estatus                      Texto        Estado actual del empleado
+
+3. RESULTADOS DE AUDITORÍA DE CALIDAD
+
+  DIMENSIÓN 1 — COMPLETITUD
+  Valores nulos por columna: 0 en todas las columnas
+  Registros completos: 100 de 100 (100%)
+  Resultado: APROBADO 
+
+  DIMENSIÓN 2 — UNICIDAD
+  IDs duplicados detectados: 0
+  Nombres duplicados: existen homónimos (ej. dos "Andrea 
+  Reyes", dos "Daniel Garcia") pero con IDs distintos.
+  Decisión: Se consideran personas distintas. No se eliminó 
+  ningún registro, con el motivo de que el dataset no se hicera mas pequeño.
+  Resultado: APROBADO 
+
+  DIMENSIÓN 3 — CONSISTENCIA
+  Dias_Laborables_Mes: valor único [22] para todos → OK
+  Dias_Asistidos: rango 8 a 22, nunca mayor a 22 → OK
+  Dias_Remotos: rango 0 a 6, valores razonables → OK
+  Dias_Permiso: rango 0 a 7, valores razonables → OK
+  Estatus: 3 valores únicos (Activo, Permiso, Vacaciones) 
+  sin errores ortográficos ni valores inesperados → OK
+  Area: 4 valores únicos (DevOps, IT Support, Networking, 
+  Security) sin inconsistencias → OK
+  Resultado: APROBADO 
+
+  DIMENSIÓN 4 — VALIDEZ
+  Se verificó que ningún colaborador tenga más días 
+  asistidos que días laborables disponibles.
+  Pero si los dias remotos no estan sumados a los dias asistidos hay un problema.
+  Máximo detectado: 22 días (igual al máximo posible) → OK
+  Se verificó que los porcentajes calculados estén entre 
+  0% y 100% → OK
+  Resultado: APROBADO 
+
+  DIMENSIÓN 5 — EXACTITUD
+  No fue posible contrastar con una fuente secundaria.
+  *Se sugiere agregar datos sintéticos para un mayor analísis.
+
+4. HALLAZGOS DE CALIDAD
+
+  Hallazgo 1 — Homónimos
+  Existen colaboradores con el mismo nombre y área diferente.
+  Impacto: Bajo. El ID_Empleado es suficiente para 
+  diferenciarlos en el análisis.
+  Acción tomada: Ninguna. Se mantienen todos los registros.
+
+  Hallazgo 2 — Vacaciones en cero
+  3 colaboradores tienen 0 días de vacaciones disponibles 
+  (Monica Navarro, Hugo Morales, Paula Navarro).
+  Impacto: Informativo. Indica que ya usaron todas sus 
+  vacaciones o que no han generado el beneficio.
+  Acción tomada: Se documenta como dato válido.
+
+  Hallazgo 3 — Colaboradores con 0 días de permiso
+  14 colaboradores tienen 0 días de permiso registrados.
+  Impacto: Positivo o neutral. Puede indicar buena 
+  asistencia o que los permisos no están siendo registrados.
+  Acción tomada: Se recomienda al supervisor verificar 
+  si el registro de permisos es completo.
+
+5. COLUMNAS AÑADIDAS EN EL PROCESO DE ENRIQUECIMIENTO
+
+  Columna nueva            Origen
+  ────────────────────────────────────────────────────
+  Pct_Asistencia           Calculada (KPI principal)
+  Pct_Efectivo             Calculada (presencial + remoto)
+  Dias_Efectivos           Calculada (suma de modalidades)
+  Cumple_Minimo            Derivada (regla de negocio 60%)
+  Nivel_Riesgo             Derivada (matriz de 4 niveles)
+  Modalidad_Remote         Derivada (clasificación remoto)
+
+6. CONCLUSIÓN DE CALIDAD
+
+El dataset presenta una calidad alta para los fines del 
+análisis. No requirió imputación, eliminación de registros 
+ni corrección de errores tipográficos. Las únicas 
+observaciones relevantes son de naturaleza operativa 
+(registro incompleto de permisos) y no afectan la 
+validez del análisis estadístico realizado.
+
